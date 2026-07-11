@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>HOME PAGE</title>
+    <link rel="stylesheet" href="home.css">
+</head>
+
+<body>
+
+    <video class="video-bg" autoplay loop muted playsinline>
+        <source src="final video background.mp4" type="video/mp4">
+    </video>
+
+    <div class="overlay"></div>
+
+    <audio class="audio" autoplay loop hidden>
+        <source src="back up bg music.mp3" type="audio/mpeg">
+    </audio>
+
+    <script>
+        const audio = document.querySelector(".audio");
+        audio.volume = 0.2;
+    </script>
+
+    <nav class="nav">
+        <a href="#home">HOME</a>
+        <a href="#profile">PROFILE</a>
+        <a href="#gallery">GALLERY</a>
+        <a href="#autobiography">AUTOBIOGRAPHY</a>
+        <a href="#contact">CONTACT</a>
+        <a href="#about">ABOUT</a>
+        <a href="#gallery" class="explore">EXPLORE</a>
+    </nav>
+
+
+    <section id="home" class="page-section">
+
+        <div class="content">
+            <h1 class="h1">
+                STEP INTO MY <br>
+                ANIME WORLD
+            </h1>
+        </div>
+
+        <div class="container">
+
+            <h3 class="h3">
+                STEP INTO MY ANIME WORLD <br>
+                WHERE STORIES, EMOTIONS, AND MEMORIES COME TO LIFE
+            </h3>
+
+            <div class="buttons">
+
+                <a href="#gallery" class="button1">
+                    EXPLORE GALLERY
+                </a>
+
+                <a href="#about" class="button2">
+                    LEARN MORE
+                </a>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+
+    <section id="profile" class="profile-section">
+
+        <div class="profile-container">
+
+            <div class="profile-image">
+                <img src="profile bg w jden.png">
+            </div>
+
+            <div class="profile-card">
+
+                <p class="profile-box">
+                    CHARACTER PROFILE
+                </p>
+
+                <h1>
+                    MY PROFILE
+                </h1>
+
+                <div class="profile-info">
+
+                    <p><span>Name:</span> Jden</p>
+                    <p><span>Age:</span> 16 Years Old</p>
+                    <p><span>Role:</span> ICT Student</p>
+                    <p><span>Specialty:</span> Web Development & Programming</p>
+                    <p><span>Hobbies:</span> Anime, Coding, Designing</p>
+                    <p><span>Goal:</span> Creating Amazing Digital Experiences</p>
+
+                </div>
+
+                <div class="profile-status">
+                    <span></span>
+                    Currently Learning Programming
+                </div>
+
+                <p class="quote">
+                    "Every line of code creates a new story of my life."
+                </p>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+
+    <section id="gallery" class="page-section gallery-section">
+
+        <h1 class="h1text"> ANIME I WATCHED </h1>
+
+        <div class="gallery-container">
+
+
+            <div class="gallery-card">
+
+                <video autoplay muted loop playsinline onclick="openVideo('aot.1080.mp4')">
+                    <source src="aot.mp4" type="video/mp4">
+                </video>
+
+                <h2>ATTACT ON TITAN</h2>
+
+            </div>
+
+
+
+            <div class="gallery-card">
+
+                <video autoplay muted loop playsinline onclick="openVideo('one punch man 2.mp4')">
+                    <source src="one punch man1.mp4" type="video/mp4">
+                </video>
+
+                <h2>ONE PUNCH MAN</h2>
+
+            </div>
+
+
+
+            <div class="gallery-card">
+
+                <video autoplay muted loop playsinline onclick="openVideo('a silent voice2.mp4')">
+                    <source src="a silent voice1.mp4" type="video/mp4">
+                </video>
+
+                <h2>A SILENT VOICE</h2>
+
+            </div>
+
+
+
+            <div class="gallery-card">
+
+                <video autoplay muted loop playsinline onclick="openVideo('dragon ball2.mp4')">
+                    <source src="dragon ball1.mp4" type="video/mp4">
+                </video>
+
+                <h2>DRAGON BALL Z</h2>
+
+            </div>
+
+
+
+            <h1 class="text"> MY TOP 3 ANIME MOVIE/SERIES </h1>
+
+
+
+            <div class="gallery-card">
+
+                <video autoplay muted loop playsinline onclick="openVideo('naruto final.mp4')">
+                    <source src="naruto first vid.mp4" type="video/mp4">
+                </video>
+
+                <h2>NARUTO SHIPPUDEN </h2>
+
+            </div>
+
+
+
+            <div class="gallery-card">
+
+                <video autoplay muted loop playsinline onclick="openVideo('Sparkle _ Your Name AMV_1080p.mp4')">
+                    <source src="your name first.mp4" type="video/mp4">
+                </video>
+
+                <h2>YOUR NAME</h2>
+
+            </div>
+
+
+
+            <div class="gallery-card">
+
+                <video autoplay muted loop playsinline onclick="openVideo('FINAL EDIT HOME PAGE.mp4')">
+                    <source src="jujutso kaisen 2..mp4" type="video/mp4">
+                </video>
+
+                <h2>JUJUTSO KAISEN</h2>
+
+            </div>
+
+
+        </div>
+
+    </section>
+
+
+
+    <div class="video-popup" id="videoPopup">
+
+        <span class="close-btn" onclick="closeVideo()">×</span>
+
+        <video id="popupVideo" controls autoplay></video>
+
+    </div>
+
+    <script>
+
+        const bgMusic = document.querySelector(".audio");
+
+
+        function openVideo(videoFile) {
+
+            const popup = document.getElementById("videoPopup");
+            const video = document.getElementById("popupVideo");
+
+
+            // Stop background music
+            bgMusic.pause();
+
+
+            popup.style.display = "flex";
+
+
+            video.src = videoFile;
+
+            video.play();
+
+        }
+
+
+
+        function closeVideo() {
+
+            const popup = document.getElementById("videoPopup");
+            const video = document.getElementById("popupVideo");
+
+
+            // Stop popup video
+            video.pause();
+
+            video.src = "";
+
+
+            popup.style.display = "none";
+
+
+            // Resume background music
+            bgMusic.play();
+
+        }
+
+    </script>
+
+</body>
+
+</html>
